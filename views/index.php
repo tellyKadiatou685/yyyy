@@ -129,7 +129,7 @@ $data = isset($data) && count($data)?$data[0]:null;
                     <div class="flex space-x-2 mb-4">
                         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Clients</button>
                         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Nouvelle Dette</button>
-                        <a href="./dette.php" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Voir Dette</a>
+                        <a <?= Session::isset("client")? 'href="http://kadiatou.diallo:8391/dette"':'' ?> class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Voir Dette</a>
                     </div>
                     <div class="flex items-center mt-4">
                         <div class="w-24 h-24 bg-gray-300 rounded-lg flex-shrink-0 overflow-hidden">

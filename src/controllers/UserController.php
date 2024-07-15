@@ -17,10 +17,16 @@ class UserController extends Controller
         if(isset($_REQUEST["search"])){
             $method = "search";
             $data = [$this->model->$method($_REQUEST["telephone"], 0)];
-
+            if(count($data)){
+                Session::set("client", $data[0]->id);
+            }
+        }
+        else{
+            Session::unset("client");
         }
         foreach(["prenom", "nom", "email", "telephone"] as $champ){
             Session::unset($champ);
+
         }
 
         $this->renderView("index.php", $data);

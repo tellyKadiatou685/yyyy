@@ -16,7 +16,7 @@ define('DB_USERNAME', $_ENV['DB_USERNAME']);
 define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 define("WEBROOT", $_ENV["WEBROOT"]);
 define("VIEW", ROOT."/views/");
-
+define("CACHE", ROOT."/cache/");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);

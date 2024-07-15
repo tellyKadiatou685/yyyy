@@ -179,7 +179,7 @@ abstract class Model
      * @param array $criteria Critères de recherche (par exemple ['name' => 'John']).
      * @return mixed|null Objet de la classe appelante ou null si non trouvé.
      */
-    public function findBy(array $criteria) {
+    public function findBy(array $criteria, $single=true) {
         // Construction des conditions SQL
         $conditions = $this->buildConditions($criteria);
     
@@ -191,7 +191,7 @@ abstract class Model
             "SELECT * FROM {$this->table} WHERE $conditions",
             $criteria,
             $this->entityName,
-            true
+            $single
         );
     
         return $result;
