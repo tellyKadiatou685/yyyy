@@ -21,6 +21,8 @@ class DetteController extends Controller
     public function index() {
 
         $dettes = $this->model->findBy(["client_id"=>Session::get("client")], false);
-        $this->renderView("dette.php", ["dettes"=>$dettes]);        
+        $this->renderView("dette.php", ["dettes"=>$dettes]);       
     }
+
+    
 }

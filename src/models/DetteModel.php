@@ -9,6 +9,7 @@ class DetteModel extends Model
     public function __construct()
     {
         parent::__construct();
+        
         // $this->table = 'Dettes';  // Assurez-vous que le nom de la table est correct
         // $this->entityName = 'App\Entity\Dette';  // Assurez-vous que le nom de l'entité est correct
     }
@@ -23,5 +24,7 @@ class DetteModel extends Model
     {
         return $this->prepare("SELECT * FROM {$this->table} WHERE client_id = :client_id", ['client_id' => $clientId]);
     }
+    
+
     
 }
